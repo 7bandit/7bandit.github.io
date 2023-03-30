@@ -1,79 +1,72 @@
-var alphaDust = function () {
+/* global function */
 
-    var _menuOn = false;
+window.addEventListener('DOMContentLoaded', () => {
 
-    function initPostHeader() {
-        $('.main .post').each(function () {
-            var $post = $(this);
-            var $header = $post.find('.post-header.index');
-            var $title = $post.find('h1.title');
-            var $readMoreLink = $post.find('a.read-more');
+  Global.themeInfo = {
+    theme: `Redefine v${Global.theme_config.version}`,
+    author: 'EvanNotFound',
+    repository: 'https://github.com/EvanNotFound/hexo-theme-redefine'
+  }
 
-            var toggleHoverClass = function () {
-                $header.toggleClass('hover');
-            };
+  Global.localStorageKey = 'Global-THEME-STATUS';
 
-            $title.hover(toggleHoverClass, toggleHoverClass);
-            $readMoreLink.hover(toggleHoverClass, toggleHoverClass);
-        });
+  Global.styleStatus = {
+    isExpandPageWidth: false,
+    isDark: false,
+    fontSizeLevel: 0,
+    isOpenPageAside: true
+  }
+
+  // print theme base info
+  Global.printThemeInfo = () => {
+    console.log(`      ______ __  __  ______  __    __  ______                       \r\n     \/\\__  _\/\\ \\_\\ \\\/\\  ___\\\/\\ \"-.\/  \\\/\\  ___\\                      \r\n     \\\/_\/\\ \\\\ \\  __ \\ \\  __\\\\ \\ \\-.\/\\ \\ \\  __\\                      \r\n        \\ \\_\\\\ \\_\\ \\_\\ \\_____\\ \\_\\ \\ \\_\\ \\_____\\                    \r\n         \\\/_\/ \\\/_\/\\\/_\/\\\/_____\/\\\/_\/  \\\/_\/\\\/_____\/                    \r\n                                                               \r\n ______  ______  _____   ______  ______ __  __   __  ______    \r\n\/\\  == \\\/\\  ___\\\/\\  __-.\/\\  ___\\\/\\  ___\/\\ \\\/\\ \"-.\\ \\\/\\  ___\\   \r\n\\ \\  __<\\ \\  __\\\\ \\ \\\/\\ \\ \\  __\\\\ \\  __\\ \\ \\ \\ \\-.  \\ \\  __\\   \r\n \\ \\_\\ \\_\\ \\_____\\ \\____-\\ \\_____\\ \\_\\  \\ \\_\\ \\_\\\\\"\\_\\ \\_____\\ \r\n  \\\/_\/ \/_\/\\\/_____\/\\\/____\/ \\\/_____\/\\\/_\/   \\\/_\/\\\/_\/ \\\/_\/\\\/_____\/\r\n                                                               \r\n  Github: https:\/\/github.com\/EvanNotFound\/hexo-theme-redefine`);
+  }
+
+  // set styleStatus to localStorage
+  Global.setStyleStatus = () => {
+    localStorage.setItem(Global.localStorageKey, JSON.stringify(Global.styleStatus));
+  }
+
+  // get styleStatus from localStorage
+  Global.getStyleStatus = () => {
+    let temp = localStorage.getItem(Global.localStorageKey);
+    if (temp) {
+      temp = JSON.parse(temp);
+      for (let key in Global.styleStatus) {
+        Global.styleStatus[key] = temp[key];
+      }
+      return temp;
+    } else {
+      return null;
+    }
+  }
+
+  Global.refresh = () => {
+    Global.initUtils();
+    navbarShrink.init();
+    Global.initModeToggle();
+    Global.initBackToTop();
+    if (Global.theme_config.home_banner.subtitle.text.length !== 0) {
+      Global.initTyped('subtitle');
     }
 
-    function _menuShow () {
-        $('nav a').addClass('menu-active');
-        $('.menu-bg').show();
-        $('.menu-item').css({opacity: 0});
-        TweenLite.to('.menu-container', 1, {padding: '0 40px'});
-        TweenLite.to('.menu-bg', 1, {opacity: '0.92'});
-        TweenMax.staggerTo('.menu-item', 0.5, {opacity: 1}, 0.3);
-        _menuOn = true;
-
-        $('.menu-bg').hover(function () {
-            $('nav a').toggleClass('menu-close-hover');
-        });
+    if (Global.theme_config.plugins.mermaid.enable === true) {
+      Global.initMermaid();
     }
 
-    function _menuHide() {
-        $('nav a').removeClass('menu-active');
-        TweenLite.to('.menu-bg', 0.5, {opacity: '0', onComplete: function () {
-            $('.menu-bg').hide();
-        }});
-        TweenLite.to('.menu-container', 0.5, {padding: '0 100px'});
-        $('.menu-item').css({opacity: 0});
-        _menuOn = false;
+    if (Global.theme_config.navbar.search.enable === true) {
+      Global.initLocalSearch();
     }
 
-    function initMenu() {
-
-        $('nav a').click(function () {
-            if(_menuOn) {
-                _menuHide();
-            } else {
-                _menuShow();
-            }
-        });
-
-        $('.menu-bg').click(function (e) {
-            if(_menuOn && e.target === this) {
-                _menuHide();
-            }
-        });
+    if (Global.theme_config.articles.code_block.copy === true) {
+      Global.initCopyCode();
     }
 
-    function displayArchives() {
-        $('.archive-post').css({opacity: 0});
-        TweenMax.staggerTo('.archive-post', 0.4, {opacity: 1}, 0.15);
+    if (Global.theme_config.articles.lazyload === true) {
+      Global.initLazyLoad();
     }
+  }
 
-    return {
-        initPostHeader: initPostHeader,
-        initMenu: initMenu,
-        displayArchives: displayArchives
-    };
-}();
-
-
-$(document).ready(function () {
-    alphaDust.initPostHeader();
-    alphaDust.initMenu();
-    alphaDust.displayArchives();
+  Global.printThemeInfo();
+  Global.refresh();
 });

